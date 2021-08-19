@@ -1,0 +1,72 @@
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 49
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE sample
+    -> ^C
+mysql> CREATE DATABASE sample;
+Query OK, 1 row affected (0.09 sec)
+
+mysql> SHOW DATABASES
+    -> ^C
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
+| test1              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> mysql sample < example.sql
+    -> ^C
+mysql> mysql -u root -p sample < example.sql
+    -> ^C
+mysql> exit
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql sample < example.sql
+Не удается найти указанный файл.
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql sample < C:\New_dump\examp.sql
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 51
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE sample;
+Database changed
+mysql> SHOW TABLES
+    -> ^C
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_sample |
++------------------+
+| ueser            |
++------------------+
+1 row in set (0.00 sec)
+
+mysql>
